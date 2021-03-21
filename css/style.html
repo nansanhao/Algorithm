@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div class="lightblue">
+        <div class="darkblue">
+            <p>我是什么颜色？</p>
+        </div>
+    </div>
+
+    <div class="darkbdlue">
+        <div class="lightblue">
+            <p>我是什么颜色？</p>
+        </div>
+    </div>
+    <script>
+        var a = function () {
+            this.b = 3;
+        }
+        var c = new a();
+        a.prototype.b = 9;
+        var b = 7;
+        a();
+        console.log(b); //3
+        console.log(c.b); //3
+        console.log(a.prototype.b); //9
+    </script>
+</body>
+
+</html>

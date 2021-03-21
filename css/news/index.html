@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="./index.css">
+
+</head>
+
+<body>
+    <div class="header">
+        新闻分类平台
+    </div>
+    <div id="app">
+        <el-tabs type="border-card" @tab-click="handleTypeChange">
+            <el-tab-pane v-for="type in types" :label="type.name">
+            </el-tab-pane>
+            <el-card v-for="report in reports" shadow="hover" class="report" @click.native="getReportDetail">
+                <div class="r-title">{{report.title}}</div>
+                <div class="r-content">{{report.content.slice(0,100)}}</div>
+            </el-card>
+        </el-tabs>
+        <div class="pagination">
+            <el-pagination background layout="prev, pager, next" :total="total" :current-page="currentPage"
+                :page-size="limit" @current-change="handlePageChange">
+            </el-pagination>
+        </div>
+        <el-dialog title="新闻详情" :visible.sync="detailVisible" width="40%">
+            <div class="r-title">湖北新增新冠肺炎确诊病例1例新增无症状感染者17例</div>
+            <div class="r-type">
+                <el-tag>游戏</el-tag>
+            </div>
+            <div class="r-content">截至2020年5月9日24时，湖北全省现有确诊病例1例，为武汉市今日新增的重症病例，现有疑似病例0例。
+
+                　　湖北全省累计报告新冠肺炎确诊病例68129例，其中：武汉市50334例、孝感市3518例、黄冈市2907例、荆州市1580例、鄂州市1394例、随州市1307例、襄阳市1175例、黄石市1015例、宜昌市931例、荆门市928例、咸宁市836例、十堰市672例、仙桃市575例、天门市496例、恩施州252例、潜江市198例、神农架林区11例。
+
+                　　全省累计治愈出院63616例，其中：武汉市46464例、孝感市3389例、黄冈市2782例、荆州市1528例、鄂州市1335例截至2020年5月9日24时，湖北全省现有确诊病例1例，为武汉市今日新增的重症病例，现有疑似病例0例。
+
+                　　湖北全省累计报告新冠肺炎确诊病例68129例，其中：武汉市50334例、孝感市3518例、黄冈市2907例、荆州市1580例、鄂州市1394例、随州市1307例、襄阳市1175例、黄石市1015例、宜昌市931例、荆门市928例、咸宁市836例、十堰市672例、仙桃市575例、天门市496例、恩施州252例、潜江市198例、神农架林区11例。
+
+                　　全省累计治愈出院63616例，其中：武汉市46464例、孝感市3389例、黄冈市2782例、荆州市1528例、鄂州市1335例、截至2020年5月9日24时，湖北全省现有确诊病例1例，为武汉市今日新增的重症病例，现有疑似病例0例。
+
+                　　湖北全省累计报告新冠肺炎确诊病例68129例，其中：武汉市50334例、孝感市3518例、黄冈市2907例、荆州市1580例、鄂州市1394例、随州市1307例、襄阳市1175例、黄石市1015例、宜昌市931例、荆门市928例、咸宁市836例、十堰市672例、仙桃市575例、天门市496例、恩施州252例、潜江市198例、神农架林区11例。
+
+                　　全省累计治愈出院63616例，其中：武汉市46464例、孝感市3389例、黄冈市2782例、荆州市1528例、鄂州市1335例、截至2020年5月9日24时，湖北全省现有确诊病例1例，为武汉市今日新增的重症病例，现有疑似病例0例。
+
+                　　湖北全省累计报告新冠肺炎确诊病例68129例，其中：武汉市50334例、孝感市3518例、黄冈市2907例、荆州市1580例、鄂州市1394例、随州市1307例、襄阳市1175例、黄石市1015例、宜昌市931例、荆门市928例、咸宁市836例、十堰市672例、仙桃市575例、天门市496例、恩施州252例、潜江市198例、神农架林区11例。
+
+                　　全省累计治愈出院63616例，其中：武汉市46464例、孝感市3389例、黄冈市2782例、荆州市1528例、鄂州市1335例、、截至2020年5月9日24时，湖北全省现有确诊病例1例，为武汉市今日新增的重症病例，现有疑似病例0例。
+
+                　　湖北全省累计报告新冠肺炎确诊病例68129例，其中：武汉市50334例、孝感市3518例、黄冈市2907例、荆州市1580例、鄂州市1394例、随州市1307例、襄阳市1175例、黄石市1015例、宜昌市931例、荆门市928例、咸宁市836例、十堰市672例、仙桃市575例、天门市496例、恩施州252例、潜江市198例、神农架林区11例。
+
+                　　全省累计治愈出院63616例，其中：武汉市46464例、孝感市3389例、黄冈市2782例、荆州市1528例、鄂州市1335例、随州市1262例、襄阳市1135例、黄石市976例、宜昌市894例、荆门市887例、咸宁市821例、十堰市664例、仙桃市553例、天门市481例、恩施州245例、潜江市189例、神农架林区11例。
+            </div>
+            <span slot="footer" class="dialog-footer">
+                <el-button type="primary" @click="detailVisible = false">确 定</el-button>
+            </span>
+        </el-dialog>
+    </div>
+</body>
+
+<!-- import Vue before Element -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./index.js"></script>
+
+</html>
