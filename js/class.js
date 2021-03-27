@@ -10,8 +10,6 @@ class ColorPoint extends Point {
         super(x, y); // 调用父类的constructor(x, y)
         this.color = color;
     }
-
-
 }
 
 
