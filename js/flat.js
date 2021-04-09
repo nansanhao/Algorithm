@@ -1,4 +1,4 @@
-let array = [1, 2, 3, [4, 5], [[6, 7, [8]]]];
+let array = [1, 2, 3, [4, 5], [[6, 7, [{ a: 3 }]]]];
 Array.prototype.myFlat = function (num = 1) {
     const flat = (arr, num) => {
         if (num <= 0 && num !== Infinity) {
@@ -11,4 +11,4 @@ Array.prototype.myFlat = function (num = 1) {
     return flat(this, num)
 }
 
-console.log(array.myFlat(Infinity)) 
+console.log(array.myFlat(Infinity))

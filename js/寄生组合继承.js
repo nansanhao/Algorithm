@@ -8,6 +8,8 @@ function Son(name, age) {
 }
 
 const protoType = Object.create(Father.prototype);
-protoType.construcor = Son;
+// let fn = function () { }
+// fn.protoType = Father.prototype;
+// const protoType = new fn();
+protoType.constructor = Son;
 Son.prototype = protoType;
-

@@ -110,7 +110,30 @@
 //   y;
 // }
 // console.log(b())
-let a=[]
-a.push([1,2]);
-a.push([1,2])
+// let a=[]
+// a.push([1,2]);
+// a.push([1,2])
+// console.log(a)
+function create(proto) {
+    function F() { };
+    F.prototype = proto;
+    return new F();
+}
+function Super() {
+
+}
+// console.log(Object.create(Super))
+console.log(Super.prototype)
+let a = Object.create(Super.prototype);
+
 console.log(a)
+let b = create(Super.prototype);
+// function F() { };
+// F.prototype = Super.prototype;
+// F.prototype.constructor = F;
+// console.log(F.prototype.constructor)
+// console.log(new F().__proto__);
+
+
+console.log(b)
+// console.log(Object.create(Super.prototype).constructor)
