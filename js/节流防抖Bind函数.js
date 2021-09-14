@@ -5,7 +5,8 @@ function throttle(callback, interval = 200) {
         if (!tag) return;
         tag = false;
         setTimeout(() => {
-            callback.apply(this, arguments)
+            callback.apply(this, arguments);
+            tag = true;
         }, interval);
     }
 }

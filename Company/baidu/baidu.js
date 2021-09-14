@@ -16,7 +16,7 @@ for (let i = 0; i < 3; i++) {
     console.log(i);
     setTimeout(function () {
         console.log(i);
-    }, 1000 * j);
+    }, 1000);
 }
 
 for (var i = 0; i < 3; i++) {
@@ -38,6 +38,12 @@ for (var i = 0; i < 3; i++) {
             console.log(v);
         }, 1000);
     }
+}
+
+for (var i = 1; i <= 5; i++) {
+    setTimeout(function timer() {
+        console.log(i)
+    }, 0)
 }
 
 

@@ -123,10 +123,10 @@ function Super() {
 
 }
 // console.log(Object.create(Super))
-console.log(Super.prototype)
+// console.log(Super.prototype)
 let a = Object.create(Super.prototype);
 
-console.log(a)
+// console.log(a)
 let b = create(Super.prototype);
 // function F() { };
 // F.prototype = Super.prototype;
@@ -135,5 +135,11 @@ let b = create(Super.prototype);
 // console.log(new F().__proto__);
 
 
-console.log(b)
+// console.log(b)
 // console.log(Object.create(Super.prototype).constructor)
+function a1() { console.log(this) }
+console.log(this)
+a1();
+const bb = new a1();
+bb.name = 1;
+console.log(bb)
